@@ -2,28 +2,30 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="67803" started-at="2020-05-19T22:41:55Z" finished-at="2020-05-19T22:43:03Z">
+  <suite name="Default suite" duration-ms="106775" started-at="2020-05-20T00:07:59Z" finished-at="2020-05-20T00:09:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="67803" started-at="2020-05-19T22:41:55Z" finished-at="2020-05-19T22:43:03Z">
+    <test name="Default test" duration-ms="106775" started-at="2020-05-20T00:07:59Z" finished-at="2020-05-20T00:09:46Z">
       <class name="com.testcases.LoginApplicationTC1">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.testcases.LoginApplicationTC1@7ac7a4e4]" name="init" is-config="true" duration-ms="26816" started-at="2020-05-20T04:11:55Z" finished-at="2020-05-20T04:12:22Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.testcases.LoginApplicationTC1@7ac7a4e4]" name="init" is-config="true" duration-ms="24336" started-at="2020-05-20T05:37:59Z" finished-at="2020-05-20T05:38:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="FAIL" signature="Login()[pri:0, instance:com.testcases.LoginApplicationTC1@7ac7a4e4]" name="Login" duration-ms="40886" started-at="2020-05-20T04:12:22Z" finished-at="2020-05-20T04:13:03Z">
+        <test-method status="FAIL" signature="Login()[pri:0, instance:com.testcases.LoginApplicationTC1@7ac7a4e4]" name="Login" duration-ms="82405" started-at="2020-05-20T05:38:23Z" finished-at="2020-05-20T05:39:46Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
-	expected [Create an account] but found [[[ChromeDriver: chrome on WINDOWS (d7b172502039c68f6fbc154cf1fa5390)] -> xpath: //h1[contains(text(),'Create an account')]]],
-	expected [Your address] but found [[[ChromeDriver: chrome on WINDOWS (d7b172502039c68f6fbc154cf1fa5390)] -> xpath: //h3[contains(text(),'Your address')]]]]]>
+	expected [Create an account] but found [CREATE AN ACCOUNT],
+	We skip the email ! it is already Present expected [false] but found [true],
+	expected [Your address] but found [YOUR ADDRESS]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: The following asserts failed:
-	expected [Create an account] but found [[[ChromeDriver: chrome on WINDOWS (d7b172502039c68f6fbc154cf1fa5390)] -> xpath: //h1[contains(text(),'Create an account')]]],
-	expected [Your address] but found [[[ChromeDriver: chrome on WINDOWS (d7b172502039c68f6fbc154cf1fa5390)] -> xpath: //h3[contains(text(),'Your address')]]]
+	expected [Create an account] but found [CREATE AN ACCOUNT],
+	We skip the email ! it is already Present expected [false] but found [true],
+	expected [Your address] but found [YOUR ADDRESS]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)
-	at com.testcases.LoginApplicationTC1.Login(LoginApplicationTC1.java:129)
+	at com.testcases.LoginApplicationTC1.Login(LoginApplicationTC1.java:160)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -2,6 +2,8 @@ package com.testcases;
 
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.JOptionPane;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
@@ -15,6 +17,7 @@ public class LoginApplicationTC1 {
 	WebDriver driver;
 	SoftAssert softAssert;
 	LoginpagePF lp = null;
+	String anotherEmail;
 
 	@BeforeTest
 	public void init() throws InterruptedException {
@@ -50,7 +53,21 @@ public class LoginApplicationTC1 {
 
 		// Enter the email Id and Submit
 		lp.email().sendKeys("mr.dbi89@gmail.com");
+			
 		lp.submit().click();
+		
+		if(lp.create_account_error() != null){
+			Thread.sleep(9000);
+			lp.setAnotherEmail(JOptionPane.showInputDialog("Please enter another email:"));
+			lp.email().clear();
+			lp.email().sendKeys(lp.getAnotherEmail());
+			System.out.println(lp.getAnotherEmail());
+			lp.submit().click();
+		}else{
+			System.out.println("Email is available !!!!!!!!!!!!!!!");
+		}
+		
+		
 		// Check the title of the first Heading
 		softAssert
 				.assertEquals(lp.PageHeading().getText(), "Create an account");
@@ -65,9 +82,10 @@ public class LoginApplicationTC1 {
 		// custLastName
 		lp.custLastName().sendKeys("Ingale");
 
+			//capturing the email2 
+		//lp.setAnotherEmail(lp.email2().getText());
 		// check email field
-		softAssert.assertTrue(lp.email2().isEnabled(),
-				"We skip the email ! it is already Present");
+		softAssert.assertFalse(lp.email2().isEnabled(),"We skip the email ! it is already Present");
 
 		/*
 		 * if(lp.email().isEnabled()){ continue;
@@ -112,14 +130,32 @@ public class LoginApplicationTC1 {
 		Thread.sleep(3000);
 		// enter zip postal code
 		lp.postcode().sendKeys("10001");
-		Thread.sleep(3000);
+		
 		// Select country drop down value
 		lp.getSelectOptionscountry().selectByVisibleText("United States");
 
 		// enter mobile number
 		lp.phone_mobile().sendKeys("9876565689");
-		// click on regiter button
+		
+		//clear and enter alias
+		lp.alias().clear();
+		lp.alias().sendKeys("same as above");
+		// click on register button
 		lp.submitAccount().click();
+		Thread.sleep(3000);
+		// click on logout link to again login by credentials
+		lp.logOut().click();
+		Thread.sleep(3000);
+		
+		//again login by register user name and password 
+		System.out.println("another Email : "+lp.getAnotherEmail());
+		
+		lp.email2().sendKeys(lp.getAnotherEmail());
+		lp.password().sendKeys("Dbi@89");
+		lp.signIn_btn().click();
+		Thread.sleep(3000);
+		
+		System.out.println(driver.getTitle());
 
 		softAssert.assertAll();
 

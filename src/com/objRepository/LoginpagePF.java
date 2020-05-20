@@ -22,6 +22,9 @@ public class LoginpagePF {
 	WebElement signIn;
 	@FindBy(id="email_create")
 	WebElement email;
+	@FindBy(id="create_account_error")
+	WebElement create_account_error;
+	 String anotherEmail;
 	@FindBy(id="SubmitCreate")
 	WebElement submit;   
 	@FindBy(xpath="//h1[contains(text(),'Create an account')]")
@@ -41,7 +44,9 @@ public class LoginpagePF {
 	@FindBy(id="email")
 	WebElement email2;
 	@FindBy(id="passwd")
-	WebElement password; 
+	WebElement password;
+	
+	
 	
 	//Dropdown
 	
@@ -84,7 +89,12 @@ public class LoginpagePF {
 	WebElement alias; 
 	@FindBy(id="submitAccount")
 	WebElement register; 
+	@FindBy(xpath="//a[@class='logout']")
+	WebElement logOut; 
 	
+	//after logout again login by register email and password and click on sign in button
+	@FindBy(id="SubmitLogin")
+	WebElement signIn_btn;
 	
 	
    //Login Link
@@ -97,9 +107,22 @@ public class LoginpagePF {
    {
 	   return email;
    }
+   public WebElement create_account_error()
+   {
+	   return create_account_error;
+   }
+   
    
   
-   public WebElement submit()
+   public String getAnotherEmail() {
+	return anotherEmail;
+}
+
+public void setAnotherEmail(String anotherEmail) {
+	this.anotherEmail = anotherEmail;
+}
+
+public WebElement submit()
    {
 	   return submit;
    }
@@ -208,4 +231,17 @@ public class LoginpagePF {
    {
 	   return register;
    }
+   
+   //login link 
+   public WebElement logOut()
+   {
+	   return logOut;
+   }
+   
+   //signIn button click
+   public WebElement signIn_btn()
+   {
+	   return signIn_btn;
+   }
+   
 }

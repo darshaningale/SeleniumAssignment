@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\san\AppData\Local\Temp\testng-eclipse--736243957\testng-customsuite.xml</span>
+                    <span>C:\Users\san\AppData\Local\Temp\testng-eclipse--560257253\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -129,10 +129,11 @@
                   </a> <!-- Login -->
                   <span class="method-name">Login</span>
                   <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
-	expected [Create an account] but found [[[ChromeDriver: chrome on WINDOWS (d7b172502039c68f6fbc154cf1fa5390)] -&gt; xpath: //h1[contains(text(),&apos;Create an account&apos;)]]],
-	expected [Your address] but found [[[ChromeDriver: chrome on WINDOWS (d7b172502039c68f6fbc154cf1fa5390)] -&gt; xpath: //h3[contains(text(),&apos;Your address&apos;)]]]
+	expected [Create an account] but found [CREATE AN ACCOUNT],
+	We skip the email ! it is already Present expected [false] but found [true],
+	expected [Your address] but found [YOUR ADDRESS]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)
-	at com.testcases.LoginApplicationTC1.Login(LoginApplicationTC1.java:129)
+	at com.testcases.LoginApplicationTC1.Login(LoginApplicationTC1.java:160)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -167,7 +168,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\san\AppData\Local\Temp\testng-eclipse--736243957\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\san\AppData\Local\Temp\testng-eclipse--560257253\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -220,12 +221,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Login')
 data.setCell(0, 2, 'com.testcases.LoginApplicationTC1')
-data.setCell(0, 3, 40886);
+data.setCell(0, 3, 82405);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 40 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -260,7 +261,7 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">Login</span>
-                <span class="method-start">26851 ms</span>
+                <span class="method-start">24352 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
