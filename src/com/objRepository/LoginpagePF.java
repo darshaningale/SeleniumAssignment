@@ -1,5 +1,7 @@
 package com.objRepository;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 public class LoginpagePF {
 	
 	WebDriver driver;
+	String emailid,passWord;
 	
 	public LoginpagePF(WebDriver driver){
 		
@@ -16,7 +19,29 @@ public class LoginpagePF {
 		 PageFactory.initElements(driver, this);
 	}
 	
+	public LoginpagePF(String emailid,String passWord){
+		this.emailid = emailid;
+		this.passWord = passWord;
+		
+	}
 	
+	public String getEmailid() {
+		return emailid;
+	}
+
+	public void setEmailid(String emailid) {
+		this.emailid = emailid;
+	}
+
+	public String getPassWord() {
+		return passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+
+
 	//Login Link
 	@FindBy(xpath="//a[@class='login']")
 	WebElement signIn;
@@ -25,6 +50,10 @@ public class LoginpagePF {
 	@FindBy(id="create_account_error")
 	WebElement create_account_error;
 	 String anotherEmail;
+	
+
+
+	String passwd;
 	@FindBy(id="SubmitCreate")
 	WebElement submit;   
 	@FindBy(xpath="//h1[contains(text(),'Create an account')]")
@@ -120,6 +149,14 @@ public class LoginpagePF {
 
 public void setAnotherEmail(String anotherEmail) {
 	this.anotherEmail = anotherEmail;
+}
+
+public String getPasswd() {
+	return passwd;
+}
+
+public String setPasswd(String passwd) {
+	return passwd;
 }
 
 public WebElement submit()
@@ -243,5 +280,8 @@ public WebElement submit()
    {
 	   return signIn_btn;
    }
+
+
+   
    
 }

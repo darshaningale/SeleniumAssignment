@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
+  <test name="LoginApplicationTC1(failed)" parallel="classes">
+    <classes>
+      <class name="com.testcases.ShopingTC2">
+        <methods>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.testcases.ShopingTC2 -->
+      <class name="com.testcases.LoginApplicationTC1">
+        <methods>
+          <include name="Login"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.testcases.LoginApplicationTC1 -->
+    </classes>
+  </test> <!-- LoginApplicationTC1(failed) -->
+  <test name="ShopingTC2(failed)" parallel="classes">
+    <classes>
+      <class name="com.testcases.ShopingTC2">
+        <methods>
+          <include name="shopping"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.testcases.ShopingTC2 -->
+      <class name="com.testcases.LoginApplicationTC1">
+        <methods>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.testcases.LoginApplicationTC1 -->
+    </classes>
+  </test> <!-- ShopingTC2(failed) -->
+</suite> <!-- Failed suite [Suite] -->
