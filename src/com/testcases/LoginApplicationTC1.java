@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import org.openqa.selenium.WebDriver;
@@ -21,22 +22,21 @@ public class LoginApplicationTC1 {
 	SoftAssert softAssert;
 	LoginpagePF lp = null;
 	String anotherEmail;
-	List<String> loginList = null; 
-	
-	List<String> getLoginDetails(LoginpagePF lp){
+	List<String> loginList = null;
+	JFrame f;
+
+	List<String> getLoginDetails(LoginpagePF lp) {
 		loginList = new ArrayList<String>();
 		String loginid = lp.getAnotherEmail();
-		String loginpassword= lp.getPassWord();
-		
+		String loginpassword = lp.getPassWord();
+
 		loginList.add(loginid);
 		loginList.add(loginpassword);
-		
+
 		System.out.println(loginList.toString());
-		
-		
-		
+
 		return loginList;
-		
+
 	}
 
 	@BeforeTest
@@ -75,12 +75,15 @@ public class LoginApplicationTC1 {
 		lp.email().sendKeys("marcos@gmail.com");
 		lp.setAnotherEmail("marcos@gmail.com");
 		lp.submit().click();
-		
-		//Thread.sleep(5000);
 
-		if ( lp.create_account_error() != null) {
+		// Thread.sleep(5000);
+
+		if (lp.create_account_error() != null) {
 			Thread.sleep(9000);
-			lp.setAnotherEmail(JOptionPane.showInputDialog("Please enter another email:"));
+
+			f = new JFrame();
+			lp.setAnotherEmail(JOptionPane.showInputDialog(f,
+					"Please enter another email:"));
 			lp.email().clear();
 			lp.email().sendKeys(lp.getAnotherEmail());
 			System.out.println(lp.getAnotherEmail());
@@ -88,8 +91,7 @@ public class LoginApplicationTC1 {
 		} else {
 			System.out.println("Email is available !!!!!!!!!!!!!!!");
 		}
-		
-		
+
 		// Check the title of the first Heading
 		softAssert
 				.assertEquals(lp.PageHeading().getText(), "Create an account");
@@ -121,10 +123,10 @@ public class LoginApplicationTC1 {
 		// password
 		lp.password().sendKeys("Dbi@89");
 		lp.setPassWord("Dbi@89");
-		
+
 		LoginApplicationTC1 latc1 = new LoginApplicationTC1();
 		latc1.getLoginDetails(lp);
-		
+
 		Thread.sleep(3000);
 		// Select drop down value for day
 		lp.getSelectOptionsday().selectByValue("8");
@@ -181,16 +183,13 @@ public class LoginApplicationTC1 {
 		lp.logOut().click();
 		Thread.sleep(3000);
 
-		
-
 		softAssert.assertAll();
 
 	}
-	
+
 	@AfterTest
-	public void tearDown(){
+	public void tearDown() {
 		driver.quit();
 	}
-	
 
 }

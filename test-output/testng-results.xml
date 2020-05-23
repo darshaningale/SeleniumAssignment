@@ -2,26 +2,30 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="341343" started-at="2020-05-23T13:45:21Z" finished-at="2020-05-23T13:51:02Z">
+  <suite name="Default suite" duration-ms="97983" started-at="2020-05-23T14:34:14Z" finished-at="2020-05-23T14:35:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="341343" started-at="2020-05-23T13:45:21Z" finished-at="2020-05-23T13:51:02Z">
-      <class name="com.testcases.ShopingTC2">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.testcases.ShopingTC2@96def03]" name="init" is-config="true" duration-ms="18782" started-at="2020-05-23T19:15:21Z" finished-at="2020-05-23T19:15:40Z">
+    <test name="Default test" duration-ms="97983" started-at="2020-05-23T14:34:14Z" finished-at="2020-05-23T14:35:52Z">
+      <class name="com.testcases.LoginApplicationTC1">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.testcases.LoginApplicationTC1@6d78f375]" name="init" is-config="true" duration-ms="23979" started-at="2020-05-23T20:04:14Z" finished-at="2020-05-23T20:04:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="FAIL" signature="shopping()[pri:0, instance:com.testcases.ShopingTC2@96def03]" name="shopping" duration-ms="312887" started-at="2020-05-23T19:15:40Z" finished-at="2020-05-23T19:20:53Z">
+        <test-method status="FAIL" signature="Login()[pri:0, instance:com.testcases.LoginApplicationTC1@6d78f375]" name="Login" duration-ms="73061" started-at="2020-05-23T20:04:38Z" finished-at="2020-05-23T20:05:51Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
-	Total cost is not same on Order Summary page ! expected [$33.02] but found [$35.02]]]>
+	expected [Create an account] but found [CREATE AN ACCOUNT],
+	We skip the email ! it is already Present expected [false] but found [true],
+	expected [Your address] but found [YOUR ADDRESS]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: The following asserts failed:
-	Total cost is not same on Order Summary page ! expected [$33.02] but found [$35.02]
+	expected [Create an account] but found [CREATE AN ACCOUNT],
+	We skip the email ! it is already Present expected [false] but found [true],
+	expected [Your address] but found [YOUR ADDRESS]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)
-	at com.testcases.ShopingTC2.shopping(ShopingTC2.java:253)
+	at com.testcases.LoginApplicationTC1.Login(LoginApplicationTC1.java:186)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -52,12 +56,12 @@
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- shopping -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.testcases.ShopingTC2@96def03]" name="tearDown" is-config="true" duration-ms="1000" started-at="2020-05-23T19:21:01Z" finished-at="2020-05-23T19:21:02Z">
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.testcases.LoginApplicationTC1@6d78f375]" name="tearDown" is-config="true" duration-ms="847" started-at="2020-05-23T20:05:51Z" finished-at="2020-05-23T20:05:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.testcases.ShopingTC2 -->
+      </class> <!-- com.testcases.LoginApplicationTC1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
