@@ -151,8 +151,7 @@ public class LoginApplicationTC1 {
 		lp.firstname().sendKeys("Darshan");
 		// enter lastname
 		lp.lastname().clear();
-		lp.lastname().sendKeys("Ingale");
-		// enter company
+                                                                           		// enter company
 		lp.company().clear();
 		lp.company().sendKeys("ABC Traders Ltd.");
 		// enter Address
